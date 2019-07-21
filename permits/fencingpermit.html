@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#spacing .w3-col{
+			padding: 5px;
+		}
+		#contNeedSpacing > .w3-cell-row > .w3-cell, #contNeedSpacing > .w3-row > .w3-col{
+			padding: 5px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		w3.includeHTML();
+	</script>
+</head>
+<body style="position: relative">
+
+	<div class="w3-card w3-white w3-round-large">
+		<div class="w3-cell-row">
+			<div class="w3-cell">
+				<input class="w3-input" type="text" name="">
+				<label>Application No.</label>
+			</div>
+			<div class="w3-cell">
+				<input class="w3-input" type="text" name="">
+				<label>FP No.</label>
+			</div>
+			<div class="w3-cell">
+				<input class="w3-input" type="text" name="">
+				<label>Building Permit No.</label>
+			</div>
+		</div>		
+	</div>
+
+	<div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
+		<div class="w3-container">
+			<h3>Box 1</h3>
+		</div>
+		<div class="w3-container">
+			<div w3-include-html="permits/applicantinfo.html"></div>
+			<div class="w3-cell-row">
+				<div class="w3-cell">
+					<div>Check</div>
+					<div class="w3-cell" style="width: 50%">
+						<input class="w3-radio" type="radio" name="check">
+						<label>For construction owned </label>
+					</div>					
+					<div class="w3-cell" style="width: 50%">
+						<input class="w3-radio" type="radio" name="check">
+						<label>By Enterprise</label>
+					</div>					
+				</div>
+				<div class="w3-cell">
+					<input class="w3-input" type="text" name="">
+					<label>Form of Ownership</label>
+				</div>
+				<div class="w3-cell">
+					<input class="w3-input" type="text" name="">
+					<label>Use or Character of Occupancy</label>
+				</div>
+			</div>
+			<div class="w3-cell-row">
+				<div class="w3-cell">
+					<input class="w3-input" type="text" name="" placeholder="Lot No.">
+					<label>Location of Demolition Works</label>				
+				</div>
+				<div class="w3-cell">
+					<input class="w3-input" type="text" name="" placeholder="Blk No.">
+				</div>
+				<div class="w3-cell">
+					<input class="w3-input" type="text" name="" placeholder="Street">
+				</div>
+				<div class="w3-cell">
+					<input class="w3-input" type="text" name="" placeholder="Barangay">
+				</div>
+				<div class="w3-cell">
+					<input class="w3-input" type="text" name="" placeholder="Municipality">
+				</div>
+			</div>
+			<div class="w3-cell-row">
+				<div class="w3-cell">					
+					<input class="w3-input" type="text" name="">
+					<label>TCT No.</label>
+				</div>
+				<div class="w3-cell">
+					<input class="w3-input" type="text" name="">
+					<label>Tax Dec. No.</label>
+				</div>
+				<div class="w3-cell">
+					<select class="w3-select">
+						<option selected value="">New Construction</option>
+						<option value="">Repair</option>
+						<option value="">Erection</option>
+						<option value="">Demolition</option>
+						<option value="">Addition</option>
+						<option>Others</option>
+					</select>
+					<label>Scope of Work</label>
+				</div>
+				<div class="w3-cell">
+					<input class="w3-input" type="text" name="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--BOX 2 & 3 !-->
+
+	<div class="w3-cell-row" id="cont2box" style="margin-top: 15px">
+		<div class="w3-cell">
+			<div class="w3-card w3-white w3-round-large">
+				<div class="w3-container">
+					<h3>Box 2</h3>
+				</div>
+				<diV class="w3-container">
+					<div class="w3-row">
+						<div class="w3-col l8 m8">
+							<input class="w3-input" type="text" name="" placeholder="Full Name">
+							<label>Architect or Civil Engr.</label>
+						</div>
+						<div class="w3-col l4 m4">
+							<input class="w3-input" type="date" name="">
+							<label>Date</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l12 m12">
+							<input class="w3-input" type="text" name="">
+							<label>Address</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="text" name="">
+							<label>PRC No.</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="date" name="">
+							<label>Validity</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="text" name="">
+							<label>PTR No.</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="date" name="">
+							<label>Date Issued</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="text" name="">
+							<label>Issued At</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="text" name="">
+							<label>TIN</label>
+						</div>
+					</div>
+				</diV>
+			</div>
+		</div>
+		<div class="w3-cell">
+			<div class="w3-card w3-white w3-round-large">
+				<div class="w3-container">
+					<h3>Box 3</h3>
+				</div>
+				<diV class="w3-container">
+					<div class="w3-row">
+						<div class="w3-col l8 m8">
+							<input class="w3-input" type="text" name="" placeholder="Full Name">
+							<label>Architect or Civil Engr.</label>
+						</div>
+						<div class="w3-col l4 m4">
+							<input class="w3-input" type="date" name="">
+							<label>Date</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l12 m12">
+							<input class="w3-input" type="text" name="">
+							<label>Address</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="text" name="">
+							<label>PRC No.</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="date" name="">
+							<label>Validity</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="text" name="">
+							<label>PTR No.</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="date" name="">
+							<label>Date Issued</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="text" name="">
+							<label>Issued At</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="text" name="">
+							<label>TIN</label>
+						</div>
+					</div>
+				</diV>
+			</div>
+		</div>
+	</div>
+
+	<!--BOX 5!-->
+
+	<div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
+		<div class="w3-container">
+			<h3>Box 4</h3>
+		</div>
+		<div class="w3-container">
+			<div class="w3-row">
+				<div class="w3-col l6 m6">
+					<div>Applicant</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="text" name="">
+							<label>Name</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="date" name="">
+							<label>Date</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l12 m12">
+							<input class="w3-input" type="text" name="">
+							<label>Address</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l4 m4">
+							<input class="w3-input" type="text" name="">
+							<label>CTC No.</label>
+						</div>
+						<div class="w3-col l4 m4">
+							<input class="w3-input" type="date" name="">
+							<label>Date Issued</label>
+						</div>
+						<div class="w3-col l4 m4">
+							<input class="w3-input" type="text" name="">
+							<label>TIN</label>
+						</div>
+					</div>
+				</div>
+				<div class="w3-col l6 m6">
+					<div>Lot Owner</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="text" name="">
+							<label>Name</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-input" type="date" name="">
+							<label>Date</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l12 m12">
+							<input class="w3-input" type="text" name="">
+							<label>Address</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l4 m4">
+							<input class="w3-input" type="text" name="">
+							<label>CTC No.</label>
+						</div>
+						<div class="w3-col l4 m4">
+							<input class="w3-input" type="date" name="">
+							<label>Date Issued</label>
+						</div>
+						<div class="w3-col l4 m4">
+							<input class="w3-input" type="text" name="">
+							<label>TIN</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--BOX 6!-->
+
+	<div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
+		<div class="w3-container">
+			<h3>Box 6</h3>
+		</div>
+		<div class="w3-container">
+			<div class="w3-row">
+				<div class="w3-col l4 m4">
+					<div>Measurement</div>
+					<div class="w3-row">
+						<div class="w3-col l12 m12">
+							<input class="w3-input" type="number" name="">
+							<label>Length in Meters</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l12 m12">
+							<input class="w3-input" type="number" name="">
+							<label>Height in Meters</label>
+						</div>
+					</div>
+				</div>
+				<div class="w3-col l8 m8">
+					<div>Type of Fencing</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-check" type="checkbox" name="">
+							<label>Indigenous materials</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-check" type="checkbox" name="">
+							<label>R.C. steel matting</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-check" type="checkbox" name="">
+							<label>R.C. (Inforced concrete)</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-check" type="checkbox" name="">
+							<label>R.C. barbed wire</label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-check" type="checkbox" name="">
+							<label>R.C. and conc. hollow blocks</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-check" type="checkbox" name="">
+							<label>Others <input class="w3-border-bottom" type="text" name="" style="border: none"></label>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-check" type="checkbox" name="">
+							<label>R.C. and bricks</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-check" type="checkbox" name="">
+							<input class="w3-border-bottom" type="text" name="" style="border: none">
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col l6 m6">
+							<input class="w3-check" type="checkbox" name="">
+							<label>R.C. and interlink/cyclone wire</label>
+						</div>
+						<div class="w3-col l6 m6">
+							<input class="w3-check" type="checkbox" name="">
+							<input class="w3-border-bottom" type="text" name="" style="border: none">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--BOX 7!-->
+
+	<div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
+		<div class="w3-container">
+			<h3>Box 7</h3>
+		</div>
+		<div class="w3-container">
+			<h4>Progress Flow</h4>
+			<div class="w3-row">
+				<div class="w3-col l3 m6">
+					<div>Line and grade (geodetic)</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<div class="w3-container w3-light-grey">
+								In
+								<input class="w3-input" type="date" name="">
+								<input class="w3-input" type="text" name="" placeholder="Time">
+							</div>
+						</div>
+					</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<div class="w3-container w3-light-grey">
+								Out
+								<input class="w3-input" type="date" name="">
+								<input class="w3-input" type="text" name="" placeholder="Time">
+							</div>
+						</div>
+					</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<input class="w3-input" type="text" name="" placeholder="Full Name">
+							<label>Processed by</label>
+						</div>
+					</div>
+				</div>
+				<div class="w3-col l3 m6">
+					<div>Civil/Structural</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<div class="w3-container w3-light-grey">
+								In
+								<input class="w3-input" type="date" name="">
+								<input class="w3-input" type="text" name="" placeholder="Time">
+							</div>
+						</div>
+					</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<div class="w3-container w3-light-grey">
+								Out
+								<input class="w3-input" type="date" name="">
+								<input class="w3-input" type="text" name="" placeholder="Time">
+							</div>
+						</div>
+					</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<input class="w3-input" type="text" name="" placeholder="Full Name">
+							<label>Processed by</label>
+						</div>
+					</div>
+				</div>
+				<div class="w3-col l3 m6">
+					<div>Electrical</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<div class="w3-container w3-light-grey">
+								In
+								<input class="w3-input" type="date" name="">
+								<input class="w3-input" type="text" name="" placeholder="Time">
+							</div>
+						</div>
+					</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<div class="w3-container w3-light-grey">
+								Out
+								<input class="w3-input" type="date" name="">
+								<input class="w3-input" type="text" name="" placeholder="Time">
+							</div>
+						</div>
+					</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<input class="w3-input" type="text" name="" placeholder="Full Name">
+							<label>Processed by</label>
+						</div>
+					</div>
+				</div>
+				<div class="w3-col l3 m6">
+					<div class="w3-cell-row">
+						<div class="w3-cell">
+							Others
+						</div>
+						<div class="w3-cell">
+							<input class="w3-border-bottom" type="text" name="" style="border: none" placeholder="Specify">
+						</div> 
+					</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<div class="w3-container w3-light-grey">
+								In
+								<input class="w3-input" type="date" name="">
+								<input class="w3-input" type="text" name="" placeholder="Time">
+							</div>
+						</div>
+					</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<div class="w3-container w3-light-grey">
+								Out
+								<input class="w3-input" type="date" name="">
+								<input class="w3-input" type="text" name="" placeholder="Time">
+							</div>
+						</div>
+					</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<input class="w3-input" type="text" name="" placeholder="Full Name">
+							<label>Processed by</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w3-container">
+			<h4>Assessed Fees</h4>
+			<div class="w3-row">
+				<div class="w3-col l3 m6">
+					<div>Line and grade (geodetic)</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<div class="w3-container" id="contNeedSpacing">
+								<div class="w3-cell-row">
+									<div class="w3-cell">
+										<input class="w3-input" type="text" name="">
+										<label>Amount Due</label>
+									</div>
+									<div class="w3-cell">
+										<input class="w3-input" type="text" name="">
+										<label>OR Number</label>
+									</div>
+								</div>
+								<div class="w3-row">
+									<div class="w3-col l4 m4">
+										<input class="w3-input" type="date" name="">
+										<label>Date Paid</label>
+									</div>
+									<div class="w3-col l8 m8">
+										<input class="w3-input" type="text" name="">
+										<label>Processed By</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="w3-col l3 m6">
+					<div>Civil/Structural</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<div class="w3-container" id="contNeedSpacing">
+								<div class="w3-cell-row">
+									<div class="w3-cell">
+										<input class="w3-input" type="text" name="">
+										<label>Amount Due</label>
+									</div>
+									<div class="w3-cell">
+										<input class="w3-input" type="text" name="">
+										<label>OR Number</label>
+									</div>
+								</div>
+								<div class="w3-row">
+									<div class="w3-col l4 m4">
+										<input class="w3-input" type="date" name="">
+										<label>Date Paid</label>
+									</div>
+									<div class="w3-col l8 m8">
+										<input class="w3-input" type="text" name="">
+										<label>Processed By</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="w3-col l3 m6">
+					<div>Electrical</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<div class="w3-container" id="contNeedSpacing">
+								<div class="w3-cell-row">
+									<div class="w3-cell">
+										<input class="w3-input" type="text" name="">
+										<label>Amount Due</label>
+									</div>
+									<div class="w3-cell">
+										<input class="w3-input" type="text" name="">
+										<label>OR Number</label>
+									</div>
+								</div>
+								<div class="w3-row">
+									<div class="w3-col l4 m4">
+										<input class="w3-input" type="date" name="">
+										<label>Date Paid</label>
+									</div>
+									<div class="w3-col l8 m8">
+										<input class="w3-input" type="text" name="">
+										<label>Processed By</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="w3-col l3 m6">
+					<div class="w3-cell-row">
+						<div class="w3-cell">
+							Others
+						</div>
+						<div class="w3-cell">
+							<input class="w3-border-bottom" type="text" name="" style="border: none" placeholder="Specify">
+						</div> 
+					</div>
+					<div class="w3-cell-row" id="spacing">
+						<div class="w3-cell">
+							<div class="w3-container" id="contNeedSpacing">
+								<div class="w3-cell-row">
+									<div class="w3-cell">
+										<input class="w3-input" type="text" name="">
+										<label>Amount Due</label>
+									</div>
+									<div class="w3-cell">
+										<input class="w3-input" type="text" name="">
+										<label>OR Number</label>
+									</div>
+								</div>
+								<div class="w3-row">
+									<div class="w3-col l4 m4">
+										<input class="w3-input" type="date" name="">
+										<label>Date Paid</label>
+									</div>
+									<div class="w3-col l8 m8">
+										<input class="w3-input" type="text" name="">
+										<label>Processed By</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="w3-row">
+				<div class="w3-col l9 m0">
+				</div>
+				<div class="w3-col l3 m12">
+					<input class="w3-input" type="text" name="" disabled>
+					<label>Total</label>
+				</div>
+			</div>	
+		</div>
+	</div>
+
+	<!--BOX 8!-->
+
+	<div class="w3-card w3-white w3-round-large" style="margin: 15px 0px;">
+		<div class="w3-container">
+			<h3>Box 8</h3>
+		</div>
+		<div class="w3-container">
+			<div class="w3-row">
+				<div class="w3-col l6 m6">
+					<input class="w3-input" type="text" name="" placeholder="Full Name">
+					<label>Building Official</label>
+				</div>
+				<div class="w3-col l6 m6">
+					<input class="w3-input" type="date" name="">
+					<label>Date</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>	
