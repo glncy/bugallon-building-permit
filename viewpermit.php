@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Electrical Permit of Lorem Ipsum | OBO-Bugallon Office</title>
+	<title>View archive | OBO-Bugallon Office</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/logo_img.png">
