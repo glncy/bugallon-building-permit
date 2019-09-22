@@ -51,14 +51,26 @@
 	        <h5><?php printf(ucwords($permit_type)) ?> Permit No. 00001 for Lorem Ipsum</h5>
 	      </div>
 	      <div class="w3-col l5 m5 s12">
-	         <a class="w3-button w3-round-xxlarge w3-bar-item" href="print/<?php printf($permit_type)?>permit.html" id="btn_reprint" target="_blank"><i class="demo-icon icon-print-2"></i> REPRINT</a>
+	         <button class="w3-button w3-round-xxlarge w3-bar-item" id="btn_reprint" onclick="printPage()"><i class="demo-icon icon-print-2"></i> REPRINT</button>
 	      </div>
 	    </div>
     	<iframe id="iframe_permit" src="print/<?php printf($permit_type)?>permit.html"></iframe>
 	</div>
 
 	
-
+	<script type="text/javascript">
+		function printPage(argument) {
+			var print = window.open("print/<?php printf($permit_type)?>permit.html", "_blank");
+			setTimeout(function() {
+				print.print();
+			}, 500);
+			print.onfocus = function() {
+				setTimeout(function() {
+					print.close();
+				}, 500);
+			};
+		}
+	</script>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/w3.js"></script>
 	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
