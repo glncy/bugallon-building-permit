@@ -51,7 +51,7 @@
 	        <h5><?php printf(ucwords($permit_type)) ?> Permit No. 00001 for Lorem Ipsum</h5>
 	      </div>
 	      <div class="w3-col l5 m5 s12">
-	         <a class="w3-button w3-round-xxlarge w3-bar-item" href="#" id="btn_reprint"><i class="demo-icon icon-print-2"></i> REPRINT</a>
+	         <a class="w3-button w3-round-xxlarge w3-bar-item" href="print/<?php printf($permit_type)?>permit.html" id="btn_reprint" target="_blank"><i class="demo-icon icon-print-2"></i> REPRINT</a>
 	      </div>
 	    </div>
     	<iframe id="iframe_permit" src="print/<?php printf($permit_type)?>permit.html"></iframe>
