@@ -1,3 +1,6 @@
+<?php
+include('process/auth.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -108,7 +111,7 @@
 	    	</div>
 	    	<footer class="w3-container w3-bar w3-padding-16">
 	      		<button class="w3-bar-item w3-button w3-round-xxlarge" onclick="document.getElementById('modal_logout').style.display='none'">No</button>
-	      		<a class="w3-bar-item w3-button w3-round-xxlarge"  href="index.php">Yes</a>
+	      		<a class="w3-bar-item w3-button w3-round-xxlarge"  href="logout.php">Yes</a>
 	    	</footer>
 	  	</div>
 	</div>

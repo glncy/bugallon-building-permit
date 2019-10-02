@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+	header('Location: home.php');
+}
+
+if ((isset($_POST['username']))&&(isset($_POST['pw']))) {
+	include("config/connection.php");
+	$username = $conn->real_escape_string($_POST['username']);
+	$pw = $conn->real_escape_string($_POST['pw']);
+	$sql = "SELECT * FROM users WHERE username='$username' AND pw='$pw' LIMIT 1";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		$row = $result->fetch_assoc();
+		$_SESSION['user_id'] = $row['id'];
+		header('Location: home.php');
+	} else {
+		$error = true;
+	}
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,18 +81,27 @@
 </head>
 <body class="w3-cell w3-center w3-cell-middle">
 	<div class="w3-container contform">
-		<form method="POST" action="home.php" class="w3-card w3-round-large" id="formLogin">
+		<form method="POST" class="w3-card w3-round-large" id="formLogin">
 			<div class="w3-container" id="cont_logo_img"> 
 				<img src="images/logo_img.png">
 			</div>
+			<?php
+			if (isset($error)) {
+			?>
+			<div class="w3-row w3-section">
+				<div class="w3-rest" style="color: red;">
+					<center>Invalid Username and Password</center>	
+				</div>
+			</div>
+			<?php } ?> 
 			<div class="w3-row w3-section">
 				<div class="w3-rest">
-					<input class="w3-input" type="text" name="username" placeholder="Username" id="input_username">	
+					<input class="w3-input" type="text" name="username" placeholder="Username" id="input_username" required>	
 				</div>
 			</div>
 			<div class="w3-row w3-section">
 				<div class="w3-rest">
-					<input class="w3-input" type="text" name="password" placeholder="Password" id="input_password">	
+					<input class="w3-input" type="text" name="pw" placeholder="Password" id="input_password" required>	
 				</div>
 			</div>
 			<div class="w3-container w3-padding-16" id="btn-item">

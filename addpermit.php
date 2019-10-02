@@ -162,6 +162,8 @@
 									<label>Street</label>
 									<input class="w3-input" type="text">
 								</div>
+							</div>
+							<div class="w3-cell-row">
 								<div class="w3-cell">
 									<label>Barangay</label>
 									<input class="w3-input" type="text">
@@ -172,6 +174,12 @@
 								</div>
 								<div class="w3-cell">
 									<label>ZIP Code</label>
+									<input class="w3-input" type="text">
+								</div>
+							</div>
+							<div class="w3-cell-ow">
+								<div class="w3-cell">
+									<label>Tel/Fax No.</label>
 									<input class="w3-input" type="text">
 								</div>
 							</div>
