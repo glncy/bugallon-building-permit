@@ -32,7 +32,7 @@ function loadForm(){
 			$(".form_added_"+perVal).attr("id",perVal+"form");*/
 			if(perVal!=""){
 				if(perVal=="building"){
-					formToLoad="permits/buildingpermit.html";
+					formToLoad="permits/buildingpermit.html";	
 					document.getElementById("form").setAttribute("w3-include-html",formToLoad);
 					w3.includeHTML(function(){
 						//change box 1 selection
