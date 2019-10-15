@@ -1,3 +1,28 @@
+<?php
+include('../config/connection.php');
+if (!isset($_GET['id'])) {
+	header("Location: ../home.php");
+}
+else {
+	$id = $_GET['id'];
+	$sql = "SELECT * FROM bp_forms WHERE id='$id' LIMIT 1";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		$row = $result->fetch_assoc();
+		$building_id = $row['building_id'];
+		$sql = "SELECT * FROM bp_building WHERE id='$building_id' LIMIT 1";
+		$result = $conn->query($sql);
+		$row = $result->fetch_assoc();
+		$applicant_id = $row['applicant_id'];
+		$sql = "SELECT * FROM bp_applicants WHERE id='$applicant_id' LIMIT 1";
+		$result = $conn->query($sql);
+		$applicant_info = $result->fetch_assoc();
+	}
+	else {
+		header("Location: ../home.php");
+	}
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -122,25 +147,25 @@
 				<td style="width: 30%">
 					<div class="w3-row">
 						<div class="w3-col l7 m7 s7 form_label">OWNER/APPLICANT:</div>
-						<div class="w3-col l5 m5 s5 form_label">LAST NAME<div class="div_placeholder"><!--last name--></div></div>
+						<div class="w3-col l5 m5 s5 form_label">LAST NAME<div class="div_placeholder"><!--last name--><strong><?php echo $applicant_info['lname']; ?></strong></div></div>
 					</div>
 					
 				</td>
-				<td class="w3-center form_label">FIRST NAME<div class="div_placeholder"><!--first name--></div></td>
-				<td class="w3-center form_label">MIDDLE NAME<div class="div_placeholder"><!--mi--></div></td>
-				<td width="20%" class="bordered form_label w3-center">TIN <div class="div_placeholder"><!--TIN--></div></td>
+				<td class="w3-center form_label">FIRST NAME<div class="div_placeholder"><!--first name--><strong><?php echo $applicant_info['fname']; ?></strong></div></td>
+				<td class="w3-center form_label">MIDDLE NAME<div class="div_placeholder"><!--mi--><strong><?php echo $applicant_info['mi']; ?></strong></div></td>
+				<td width="20%" class="bordered form_label w3-center">TIN <div class="div_placeholder"><!--TIN--><strong><?php echo $applicant_info['tin']; ?></strong></div></td>
 			</tr>
 			<tr>
 				<td colspan="3" class="bordered">
 					<div class="w3-row">
 						<div class="w3-col l2 m2 s2 form_label">ADDRESS:</div>
-						<div class="w3-col l1 m1 s1 form_label">NO.<div class="div_placeholder_2"><!--address no.--></div></div>
-						<div class="w3-col l2 m2 s2 form_label">STREET<div class="div_placeholder_2"><!--address street--></div></div>
-						<div class="w3-col l3 m3 s3 form_label">BARANGAY<div class="div_placeholder_2"><!--address brgy--></div></div>
-						<div class="w3-col l4 m4 s4 form_label">CITY/MUNICIPALITY<div class="div_placeholder_2"><!--city/municipality--></div></div>
+						<div class="w3-col l1 m1 s1 form_label">NO.<div class="div_placeholder_2"><!--address no.--><strong><?php echo $applicant_info['add_no']; ?></strong></div></div>
+						<div class="w3-col l2 m2 s2 form_label">STREET<div class="div_placeholder_2"><!--address street--><strong><?php echo $applicant_info['street']; ?></strong></div></div>
+						<div class="w3-col l3 m3 s3 form_label">BARANGAY<div class="div_placeholder_2"><!--address brgy--><strong><?php echo $applicant_info['barangay']; ?></strong></div></div>
+						<div class="w3-col l4 m4 s4 form_label">CITY/MUNICIPALITY<div class="div_placeholder_2"><!--city/municipality--><strong><?php echo $applicant_info['municipality']; ?></strong></div></div>
 					</div>
 				</td>
-				<td class="bordered form_label w3-center">TEL./FAX NO.<div class="div_placeholder"><!--tel. no.--></div></td>
+				<td class="bordered form_label w3-center">TEL./FAX NO.<div class="div_placeholder"><!--tel. no.--><strong><?php echo $applicant_info['tel_no']; ?></strong></div></td>
 			</tr>
 			<tr>
 				<td colspan="4" class="bordered">

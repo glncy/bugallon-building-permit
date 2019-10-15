@@ -1,3 +1,24 @@
+<?php
+include('../config/connection.php');
+if (!isset($_GET['id'])) {
+	header("Location: ../home.php");
+}
+else {
+	$id = $_GET['id'];
+	$sql = "SELECT * FROM bp_building WHERE id='$id' LIMIT 1";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		$row = $result->fetch_assoc();
+		$applicant_id = $row['applicant_id'];
+		$sql = "SELECT * FROM bp_applicants WHERE id='$applicant_id' LIMIT 1";
+		$result = $conn->query($sql);
+		$applicant_info = $result->fetch_assoc();
+	}
+	else {
+		header("Location: ../home.php");
+	}
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -176,7 +197,7 @@
 									OWNER
 								</div>
 								<div class="w3-col l3 m3 s3">
-									Last Name
+									Last Name<br/>
 								</div>
 								<div class="w3-col l3 m3 s3">
 									First Name
@@ -188,7 +209,25 @@
 									Tax Acct. No.
 								</div>
 							</div>
-							<div class="div_placeholder"></div>
+							<div class="div_placeholder">
+								<div class="w3-row">
+									<div class="w3-col l2 m2 s2">
+										<span>--</span>
+									</div>
+									<div class="w3-col l3 m3 s3">
+										<strong><?php echo $applicant_info['lname']; ?></strong>
+									</div>
+									<div class="w3-col l3 m3 s3">
+										<strong><?php echo $applicant_info['fname']; ?></strong>
+									</div>
+									<div class="w3-col l2 m2 s2">
+										<strong><?php echo $applicant_info['mi']; ?></strong>
+									</div>
+									<div class="w3-col l2 m2 s2">
+										<strong><?php echo $applicant_info['tin']; ?></strong>
+									</div>
+								</div>
+							</div>
 						</td>
 					</tr>
 					<tr>
@@ -208,11 +247,11 @@
 					<tr>
 						<td class="bordered" colspan="3" width="60%">
 							<div>ADDRESS</div>
-							<div class="div_placeholder_2"></div>
+							<div class="div_placeholder_2"><strong><?php echo $applicant_info['add_no']." ".$applicant_info['street']." ".$applicant_info['barangay']." ".$applicant_info['municipality']." ".$applicant_info['zip_code']; ?></strong></div>
 						</td>
 						<td class="bordered">
 							<div>Tel. No.</div>
-							<div class="div_placeholder_2"></div>
+							<div class="div_placeholder_2"><strong><?php echo $applicant_info['tel_no']; ?></strong></div>
 						</td>
 					</tr>
 					<tr>

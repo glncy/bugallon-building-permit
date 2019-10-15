@@ -1,3 +1,28 @@
+<?php
+include('../config/connection.php');
+if (!isset($_GET['id'])) {
+	header("Location: ../home.php");
+}
+else {
+	$id = $_GET['id'];
+	$sql = "SELECT * FROM bp_forms WHERE id='$id' LIMIT 1";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		$row = $result->fetch_assoc();
+		$building_id = $row['building_id'];
+		$sql = "SELECT * FROM bp_building WHERE id='$building_id' LIMIT 1";
+		$result = $conn->query($sql);
+		$row = $result->fetch_assoc();
+		$applicant_id = $row['applicant_id'];
+		$sql = "SELECT * FROM bp_applicants WHERE id='$applicant_id' LIMIT 1";
+		$result = $conn->query($sql);
+		$applicant_info = $result->fetch_assoc();
+	}
+	else {
+		header("Location: ../home.php");
+	}
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -139,11 +164,20 @@
 						<div class="w3-col l8 m8 s8 form_label">OWNER/APPLICANT</div>
 						<div class="w3-col l4 m4 s4 form_label">LAST NAME</div>
 					</div>
-					<div class="div_placeholder"></div>
+					<div class="div_placeholder">
+						<div class="w3-row">
+							<div class="w3-col l8 m8 s8">
+								<span>--</span>
+							</div>
+							<div class="w3-col l4 m4 s4">
+								<strong><?php echo $applicant_info['lname']; ?></strong>
+							</div>
+						</div>
+					</div>
 				</td>
-				<td class="w3-center form_label">FIRST NAME<div class="div_placeholder"></div></td>
-				<td class="w3-center form_label">MI<div class="div_placeholder"></div></td>
-				<td width="30%" class="bordered form_label">TIN <div class="div_placeholder"></div></td>
+				<td class="w3-center form_label">FIRST NAME<div class="div_placeholder"><strong><?php echo $applicant_info['fname']; ?></strong></div></td>
+				<td class="w3-center form_label">MI<div class="div_placeholder"><strong><?php echo $applicant_info['mi']; ?></strong></div></td>
+				<td width="30%" class="bordered form_label">TIN <div class="div_placeholder"><strong><?php echo $applicant_info['tin']; ?></strong></div></td>
 			</tr>
 			<tr>
 				<td class="form_label bordered">FOR CONSTRUCTION OWNED <div>BY ENTEPRISE</div></td>
@@ -160,9 +194,30 @@
 						<div class="w3-col l3 m3 s3 form_label">CITY/MUNICIPALITY</div>
 						<div class="w3-col l2 m2 s2 form_label">ZIP CODE</div>
 					</div>
-					<div class="div_placeholder_2"></div>
+					<div class="div_placeholder_2">
+						<div class="w3-row">
+							<div class="w3-col l2 m2 s2">
+								<span>--</span>
+							</div>
+							<div class="w3-col l1 m1 s1">
+								<strong><?php echo $applicant_info['add_no']; ?></strong>
+							</div>
+							<div class="w3-col l2 m2 s2">
+								<strong><?php echo $applicant_info['street']; ?></strong>
+							</div>
+							<div class="w3-col l2 m2 s2">
+								<strong><?php echo $applicant_info['barangay']; ?></strong>
+							</div>
+							<div class="w3-col l3 m3 s3">
+								<strong><?php echo $applicant_info['municipality']; ?></strong>
+							</div>
+							<div class="w3-col l2 m2 s2">
+								<strong><?php echo $applicant_info['zip_code']; ?></strong>
+							</div>
+						</div>
+					</div>
 				</td>
-				<td class="bordered form_label">TELEPHONE NO.<div class="div_placeholder"></div></td>
+				<td class="bordered form_label">TELEPHONE NO.<div class="div_placeholder"><strong><?php echo $applicant_info['zip_code']; ?></strong></div></td>
 			</tr>
 			<tr>
 				<td colspan="4" class="bordered">

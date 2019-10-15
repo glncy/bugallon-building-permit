@@ -54,8 +54,7 @@
             <table class="w3-table w3-bordered display dataTable" id="data_table">
                 <thead>
                     <tr>
-                        <th class="tableheaders">ID</th>
-                        <th class="tableheaders">Date</th>
+                        <th class="tableheaders">Application ID</th>
                         <th class="tableheaders">Permit</th>
                         <th class="tableheaders">Permit No.</th>
                         <th class="tableheaders">Applicant Name</th>
@@ -87,15 +86,6 @@
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/w3.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function(){
-        	$.fn.DataTable.ext.pager.numbers_length = 5;
-        	$.fn.DataTable.ext.pager.simple_numbers = function(page, pages) {
-            	return ["previous", _numbers(page, pages), "next"];
-        	};
-        	$('#data_table').DataTable( {
-            	"pagingType": "full_numbers"
-        	});
-        });
 	</script>
 	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 </body>

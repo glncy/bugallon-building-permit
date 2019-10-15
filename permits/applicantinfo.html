@@ -4,42 +4,44 @@
 	<title></title>
 </head>
 <body>
+	<input type="hidden" name="applicant_type" id="applicant_type" />
+	<input type="hidden" name="applicant_id" id="applicant_id"/>
 	<div class="w3-row">
 		<div class="w3-col l3">
-			<input class="w3-input" type="text" name="" placeholder="Last Name">
+			<input class="w3-input" type="text" placeholder="Last Name" id="app_lname" readonly value="test">
 			<label>Owner/Applicant Name</label>
 		</div>
 		<div class="w3-col l3">
-			<input class="w3-input" type="text" placeholder="First Name">
+			<input class="w3-input" type="text" placeholder="First Name" id="app_fname" readonly>
 		</div>
 		<div class="w3-col l1">
-			<input class="w3-input" type="text" placeholder="MI">
+			<input class="w3-input" type="text" placeholder="MI" id="app_mi" readonly>
 		</div>
 		<div class="w3-col l2">
-			<input class="w3-input" type="text">
+			<input class="w3-input" type="text" id="app_tin">
 			<label>TIN</label>
 		</div>
 		<div class="w3-col l3">
-			<input class="w3-input" type="text" placeholder="09***********">
+			<input class="w3-input" type="text" placeholder="09***********" id="app_tel_no" readonly>
 			<label>Tel. No./Fax No.</label>
 		</div>
 	</div>
 	<div class="w3-row">
 		<div class="w3-col l2">
-			<input class="w3-input" type="text" name="" placeholder="No.">
+			<input class="w3-input" type="text" name="" placeholder="No." id="app_add_no" readonly>
 			<label>Address</label>
 		</div>
 		<div class="w3-col l3">
-			<input class="w3-input" type="text" placeholder="Street">
+			<input class="w3-input" type="text" placeholder="Street" id="app_street" readonly>
 		</div>
 		<div class="w3-col l3">
-			<input class="w3-input" type="text" placeholder="Barangay">
+			<input class="w3-input" type="text" placeholder="Barangay" id="app_barangay" readonly>
 		</div>
 		<div class="w3-col l3">
-			<input class="w3-input" type="text" placeholder="Municipality">
+			<input class="w3-input" type="text" placeholder="Municipality" id="app_municipality" readonly>
 		</div>
 		<div class="w3-col l1">
-			<input class="w3-input" type="text" placeholder="ZIP Code">
+			<input class="w3-input" type="text" placeholder="ZIP Code" id="app_zip_code" readonly>
 		</div>
 	</div>
 </body>

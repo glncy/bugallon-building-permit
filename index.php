@@ -9,7 +9,7 @@ if ((isset($_POST['username']))&&(isset($_POST['pw']))) {
 	include("config/connection.php");
 	$username = $conn->real_escape_string($_POST['username']);
 	$pw = $conn->real_escape_string($_POST['pw']);
-	$sql = "SELECT * FROM users WHERE username='$username' AND pw='$pw' LIMIT 1";
+	$sql = "SELECT * FROM bp_users WHERE username='$username' AND pw='$pw' LIMIT 1";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();

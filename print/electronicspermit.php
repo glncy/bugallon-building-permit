@@ -1,3 +1,28 @@
+<?php
+include('../config/connection.php');
+if (!isset($_GET['id'])) {
+	header("Location: ../home.php");
+}
+else {
+	$id = $_GET['id'];
+	$sql = "SELECT * FROM bp_forms WHERE id='$id' LIMIT 1";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		$row = $result->fetch_assoc();
+		$building_id = $row['building_id'];
+		$sql = "SELECT * FROM bp_building WHERE id='$building_id' LIMIT 1";
+		$result = $conn->query($sql);
+		$row = $result->fetch_assoc();
+		$applicant_id = $row['applicant_id'];
+		$sql = "SELECT * FROM bp_applicants WHERE id='$applicant_id' LIMIT 1";
+		$result = $conn->query($sql);
+		$applicant_info = $result->fetch_assoc();
+	}
+	else {
+		header("Location: ../home.php");
+	}
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -148,9 +173,9 @@
 				<td colspan="4" style="width: 30%">
 					<div class="w3-row">
 						<div class="w3-col l3 m3 s3 form_label">OWNER/APPLICANT <div class="div_placeholder"></div></div>
-						<div class="w3-col l4 m4 s4 form_label w3-center">LAST NAME <div class="div_placeholder"><!--INSERT LN--></div></div>
-						<div class="w3-col l4 m4 s4 form_label w3-center">FIRST NAME NAME <div class="div_placeholder"><!--INSERT FN--></div></div>
-						<div class="w3-col l1 m1 s1 form_label w3-center">MI <div class="div_placeholder"><!--INSERT MI--></div></div>
+						<div class="w3-col l4 m4 s4 form_label w3-center">LAST NAME <div class="div_placeholder"><!--INSERT LN--><strong><?php echo $applicant_info['lname']; ?></strong></div></div>
+						<div class="w3-col l4 m4 s4 form_label w3-center">FIRST NAME NAME <div class="div_placeholder"><!--INSERT FN--><strong><?php echo $applicant_info['fname']; ?></strong></div></div>
+						<div class="w3-col l1 m1 s1 form_label w3-center">MI <div class="div_placeholder"><!--INSERT MI--><strong><?php echo $applicant_info['mi']; ?></strong></div></div>
 					</div>
 				</td>
 				<td width="20%" class="bordered form_label">TIN <div class="div_placeholder"><!--INSERT TIN--></div></td>
@@ -164,14 +189,14 @@
 				<td colspan="3" style="width: 30%">
 					<div class="w3-row">
 						<div class="w3-col l2 m2 s2 form_label">ADDRESS:<div class="div_placeholder"></div></div>
-						<div class="w3-col l1 m1 s1 form_label">NO., <div class="div_placeholder"><!--INSERT NO.--></div></div>
-						<div class="w3-col l2 m2 s2 form_label">STREET, <div class="div_placeholder"><!--INSERT STREET--></div></div>
-						<div class="w3-col l2 m2 s2 form_label">BARANGAY,<div class="div_placeholder"><!--INSERT STREET--></div></div>
-						<div class="w3-col l3 m3 s3 form_label">CITY/MUNICIPALITY <div class="div_placeholder"><!--INSERT CITY/MUNI--></div></div>
-						<div class="w3-col l2 m2 s2 form_label">ZIP CODE <div class="div_placeholder"><!--INSERT ZIPCODE--></div></div>
+						<div class="w3-col l1 m1 s1 form_label">NO., <div class="div_placeholder"><!--INSERT NO.--><strong><?php echo $applicant_info['add_no']; ?></strong></div></div>
+						<div class="w3-col l2 m2 s2 form_label">STREET, <div class="div_placeholder"><!--INSERT STREET--><strong><?php echo $applicant_info['street']; ?></strong></div></div>
+						<div class="w3-col l2 m2 s2 form_label">BARANGAY,<div class="div_placeholder"><!--INSERT STREET--><strong><?php echo $applicant_info['barangay']; ?></strong></div></div>
+						<div class="w3-col l3 m3 s3 form_label">CITY/MUNICIPALITY <div class="div_placeholder"><!--INSERT CITY/MUNI--><strong><?php echo $applicant_info['municipality']; ?></strong></div></div>
+						<div class="w3-col l2 m2 s2 form_label">ZIP CODE <div class="div_placeholder"><!--INSERT ZIPCODE--><strong><?php echo $applicant_info['zip_code']; ?></strong></div></div>
 					</div>
 				</td>
-				<td colspan="2" class="bordered form_label" width="25%">TELEPHONE NO <div class="div_placeholder"></div></td>
+				<td colspan="2" class="bordered form_label" width="25%">TELEPHONE NO <div class="div_placeholder"><strong><?php echo $applicant_info['tel_no']; ?></strong></div></td>
 			</tr>
 			<tr>
 				<td colspan="5" class="bordered" style="padding-right: 5px; padding-bottom: 5px;">

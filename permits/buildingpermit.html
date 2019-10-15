@@ -13,15 +13,14 @@
 	</script>
 </head>
 <body style="position: relative">
-
-	<div class="w3-card w3-white w3-round-large">
+	<div class="w3-card w3-white w3-round-large" style="display: none;">
 		<div class="w3-cell-row">
 			<div class="w3-cell">
-				<input class="w3-input" type="date" name="">
+				<input class="w3-input" type="date" name="date_of_application">
 				<label>Date of Application</label>
 			</div>
 			<div class="w3-cell">
-				<input class="w3-input" type="date" name="">
+				<input class="w3-input" type="date" name="data_issued">
 				<label>Date Issued</label>
 			</div>
 		</div>		
@@ -33,58 +32,61 @@
 		</div>
 		<div class="w3-container">
 			<div w3-include-html="permits/applicantinfo.html"></div>
+		</div>
+		<div class="w3-container" style="display: none;">
+			<!-- <div w3-include-html="permits/applicantinfo.html"></div> -->
 			<div class="w3-cell-row">
 				<div class="w3-cell">
 					<div>Check</div>
 					<div class="w3-cell" style="width: 50%">
-						<input class="w3-radio" type="radio" name="check">
+						<input class="w3-radio" type="radio" name="type_of_building" value="For construction owned">
 						<label>For construction owned </label>
 					</div>					
 					<div class="w3-cell" style="width: 50%">
-						<input class="w3-radio" type="radio" name="check">
+						<input class="w3-radio" type="radio" name="type_of_building" value="By Enterprise">
 						<label>By Enterprise</label>
 					</div>					
 				</div>
 				<div class="w3-cell">
-					<input class="w3-input" type="text" name="">
+					<input class="w3-input" type="text" name="form_of_ownership">
 					<label>Form of Ownership</label>
 				</div>
 				<div class="w3-cell">
-					<input class="w3-input" type="text" name="">
-					<label>Main Econimic Activity/Kind of Business</label>
+					<input class="w3-input" type="text" name="main_economic">
+					<label>Main Economic Activity/Kind of Business</label>
 				</div>
 			</div>
 			<div class="w3-cell-row">
 				<div class="w3-cell">
-					<input class="w3-input" type="text" name="" placeholder="Lot No.">
+					<input class="w3-input" type="text" name="lot_no" placeholder="Lot No.">
 					<label>Location of Construction</label>				
 				</div>
 				<div class="w3-cell">
-					<input class="w3-input" type="text" name="" placeholder="Blk No.">
+					<input class="w3-input" type="text" name="blk_no" placeholder="Blk No.">
 				</div>
 				<div class="w3-cell">
-					<input class="w3-input" type="text" name="" placeholder="Street">
+					<input class="w3-input" type="text" name="street" placeholder="Street">
 				</div>
 				<div class="w3-cell">
-					<input class="w3-input" type="text" name="" placeholder="Barangay">
+					<input class="w3-input" type="text" name="barangay" placeholder="Barangay">
 				</div>
 				<div class="w3-cell">
-					<input class="w3-input" type="text" name="" placeholder="Municipality">
+					<input class="w3-input" type="text" name="municipality" placeholder="Municipality">
 				</div>
 			</div>
 			<div class="w3-row">
 				<div>Scope of Work</div>
 				<div class="w3-col l4 m4">
-					<input class="w3-check" type="checkbox" name="">
+					<input class="w3-check" type="checkbox" name="new_construction">
 					<label>New Construction</label>
 				</div>
 				<div class="w3-col l4 m4">
-					<input class="w3-check" type="checkbox" name="">
-					<label>Addition of <input class="w3-border-bottom" type="text" name="" style="border: none"></label>
+					<input class="w3-check" type="checkbox" name="addition_of">
+					<label>Addition of <input class="w3-border-bottom" type="text" name="addition_of_data" style="border: none"></label>
 				</div>
 				<div class="w3-col l4 m4">
-					<input class="w3-check" type="checkbox" name="">
-					<label>Repair of <input class="w3-border-bottom" type="text" name="" style="border: none"></label>
+					<input class="w3-check" type="checkbox" name="repair_of">
+					<label>Repair of <input class="w3-border-bottom" type="text" name="repair_of" style="border: none"></label>
 				</div>
 			</div>
 			<div class="w3-row">
@@ -142,7 +144,7 @@
 
 	<!--BOX 2!-->
 
-	<div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
+	<!-- <div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
 		<div class="w3-container">
 			<h3>Box 2</h3>
 		</div>
@@ -194,11 +196,11 @@
 				</div>				
 			</div>
 		</div>
-	</diV>
+	</diV> -->
 
 	<!--BOX 3!-->
 
-	<div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
+	<!-- <div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
 		<div class="w3-container">
 			<h3>Box 3</h3>
 		</div>
@@ -273,11 +275,11 @@
 				</div>
 			</div>
 		</div>
-	</diV>
+	</diV> -->
 	
 	<!--BOX 4!-->
 
-	<div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
+	<!-- <div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
 		<div class="w3-container">
 			<h3>Box 4</h3>
 		</div>
@@ -391,11 +393,11 @@
 				</div>
 			</div>
 		</div>
-	</diV>
+	</diV> -->
 
 	<!--BOX 5!-->
 
-	<div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
+	<!-- <div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
 		<div class="w3-container">
 			<h3>Box 5</h3>
 		</div>
@@ -669,11 +671,11 @@
 				</div>
 			</div>
 		</div>
-	</diV>
+	</diV> -->
 
 	<!--BOX 6 & 7 !-->
 
-	<div class="w3-cell-row" id="cont2box" style="margin-top: 10px">
+	<!-- <div class="w3-cell-row" id="cont2box" style="margin-top: 10px">
 		<div class="w3-cell">
 			<div class="w3-card w3-white w3-round-large">
 				<div class="w3-container">
@@ -742,11 +744,11 @@
 				</diV>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!--BOX 8 & 9 !-->
 
-	<div class="w3-cell-row" id="cont2box" style="margin: 10px 0px;">
+	<!-- <div class="w3-cell-row" id="cont2box" style="margin: 10px 0px;">
 		<div class="w3-cell">
 			<div class="w3-card w3-white w3-round-large">
 				<div class="w3-container">
@@ -801,6 +803,6 @@
 				</diV>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </body>
 </html>	

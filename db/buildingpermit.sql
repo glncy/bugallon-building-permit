@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 07, 2019 at 02:10 PM
+-- Generation Time: Oct 15, 2019 at 02:22 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `applicants`
+-- Table structure for table `bp_applicants`
 --
 
-CREATE TABLE `applicants` (
+CREATE TABLE `bp_applicants` (
   `id` int(255) NOT NULL,
   `lname` text NOT NULL,
   `fname` text NOT NULL,
@@ -42,48 +42,48 @@ CREATE TABLE `applicants` (
   `tel_no` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `applicants`
---
-
-INSERT INTO `applicants` (`id`, `lname`, `fname`, `mi`, `tin`, `add_no`, `street`, `barangay`, `municipality`, `zip_code`, `tel_no`) VALUES
-(1, '', '', '', '', '', '', '', '', '', '');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buildings`
+-- Table structure for table `bp_building`
 --
 
-CREATE TABLE `buildings` (
+CREATE TABLE `bp_building` (
   `id` int(255) NOT NULL,
   `applicant_id` int(255) NOT NULL,
-  `lot_no` text NOT NULL,
-  `blk_no` text NOT NULL,
-  `tct_no` text NOT NULL,
-  `tax_dec_no` text NOT NULL,
-  `street` text NOT NULL,
-  `barangay` text NOT NULL,
-  `municipality` text NOT NULL
+  `data` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `bp_forms`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `bp_forms` (
+  `id` int(255) NOT NULL,
+  `building_id` int(255) DEFAULT NULL,
+  `type` varchar(100) NOT NULL,
+  `data` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bp_users`
+--
+
+CREATE TABLE `bp_users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `pw` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `bp_users`
 --
 
-INSERT INTO `users` (`id`, `username`, `pw`) VALUES
+INSERT INTO `bp_users` (`id`, `username`, `pw`) VALUES
 (1, 'admin', '1234');
 
 --
@@ -91,21 +91,27 @@ INSERT INTO `users` (`id`, `username`, `pw`) VALUES
 --
 
 --
--- Indexes for table `applicants`
+-- Indexes for table `bp_applicants`
 --
-ALTER TABLE `applicants`
+ALTER TABLE `bp_applicants`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `buildings`
+-- Indexes for table `bp_building`
 --
-ALTER TABLE `buildings`
+ALTER TABLE `bp_building`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indexes for table `bp_forms`
 --
-ALTER TABLE `users`
+ALTER TABLE `bp_forms`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `bp_users`
+--
+ALTER TABLE `bp_users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -113,21 +119,27 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `applicants`
+-- AUTO_INCREMENT for table `bp_applicants`
 --
-ALTER TABLE `applicants`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `buildings`
---
-ALTER TABLE `buildings`
+ALTER TABLE `bp_applicants`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `bp_building`
 --
-ALTER TABLE `users`
+ALTER TABLE `bp_building`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `bp_forms`
+--
+ALTER TABLE `bp_forms`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `bp_users`
+--
+ALTER TABLE `bp_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
