@@ -32,9 +32,6 @@
 		</div>
 		<div class="w3-container">
 			<div w3-include-html="permits/applicantinfo.html"></div>
-		</div>
-		<div class="w3-container" style="display: none;">
-			<!-- <div w3-include-html="permits/applicantinfo.html"></div> -->
 			<div class="w3-cell-row">
 				<div class="w3-cell">
 					<div>Check</div>
@@ -86,39 +83,39 @@
 				</div>
 				<div class="w3-col l4 m4">
 					<input class="w3-check" type="checkbox" name="repair_of">
-					<label>Repair of <input class="w3-border-bottom" type="text" name="repair_of" style="border: none"></label>
+					<label>Repair of <input class="w3-border-bottom" type="text" name="repair_of_data" style="border: none"></label>
 				</div>
 			</div>
 			<div class="w3-row">
 				<div class="w3-col l4 m4">
-					<input class="w3-check" type="checkbox" name="">
-					<label>Renovation of <input class="w3-border-bottom" type="text" name="" style="border: none"></label>
+					<input class="w3-check" type="checkbox" name="renovation_of">
+					<label>Renovation of <input class="w3-border-bottom" type="text" name="renovation_of_data" style="border: none"></label>
 				</div>
 				<div class="w3-col l4 m4">
-					<input class="w3-check" type="checkbox" name="">
-					<label>Demolition of <input class="w3-border-bottom" type="text" name="" style="border: none"></label>
+					<input class="w3-check" type="checkbox" name="demolition_of">
+					<label>Demolition of <input class="w3-border-bottom" type="text" name="demolition_of_data" style="border: none"></label>
 				</div>
 				<div class="w3-col l4 m4">
-					<input class="w3-check" type="checkbox" name="">
-					<label>Others <input class="w3-border-bottom" type="text" name="" style="border: none"></label>
-				</div>
-			</div>
-			<div class="w3-row">
-				<div class="w3-col l4 m4">
-					<input class="w3-check" type="checkbox" name="">
-					<label><input class="w3-border-bottom" type="text" name="" style="border: none"> of <input class="w3-border-bottom" type="text" name="" style="border: none"></label>
-				</div>
-				<div class="w3-col l4 m4">
-					<input class="w3-check" type="checkbox" name="">
-					<label><input class="w3-border-bottom" type="text" name="" style="border: none"> of <input class="w3-border-bottom" type="text" name="" style="border: none"></label>
-				</div>
-				<div class="w3-col l4 m4">
-					<input class="w3-input" type="number" name="" placeholder="No. of Units" style="height: 33px">
+					<input class="w3-check" type="checkbox" name="scope_of_work_others">
+					<label>Others <input class="w3-border-bottom" type="text" name="scope_of_work_others_data" style="border: none"></label>
 				</div>
 			</div>
 			<div class="w3-row">
 				<div class="w3-col l4 m4">
-					<select class="w3-select" id="selection">
+					<input class="w3-check" type="checkbox" name="scope_of_work_others_1">
+					<label><input class="w3-border-bottom" type="text" name="scope_of_work_others_1_data" style="border: none"> of <input class="w3-border-bottom" type="text" name="" style="border: none"></label>
+				</div>
+				<div class="w3-col l4 m4">
+					<input class="w3-check" type="checkbox" name="scope_of_work_others_2">
+					<label><input class="w3-border-bottom" type="text" name="scope_of_work_others_2_data" style="border: none"> of <input class="w3-border-bottom" type="text" name="" style="border: none"></label>
+				</div>
+				<div class="w3-col l4 m4">
+					<input class="w3-input" type="number" name="number_of_units" placeholder="No. of Units" style="height: 33px">
+				</div>
+			</div>
+			<div class="w3-row">
+				<div class="w3-col l4 m4">
+					<select class="w3-select" id="selection" name="type_of_occupancy_selection">
 						<option selected disabled value="">Selection</option>
 						<option value="residential">Residential</option>
 						<option value="commercial">Commercial</option>
@@ -131,12 +128,12 @@
 					<label>Use or Type of Occupancy</label>
 				</div>
 				<div class="w3-col l4 m4">
-					<select class="w3-select" id="subselection">
+					<select class="w3-select" id="subselection" name="type_of_occupancy_sub_selection">
 						<option selected disabled value="">Subselection</option>
 					</select>
 				</div>
 				<div class="w3-col l4 m4">
-					<input class="w3-input" type="text" name="" id="typeremarks" disabled placeholder="Specify">
+					<input class="w3-input" type="text" name="" id="typeremarks" disabled placeholder="Specify" name="type_of_occupancy_others">
 				</div>
 			</div>
 		</div>
@@ -144,7 +141,7 @@
 
 	<!--BOX 2!-->
 
-	<!-- <div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
+	<div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
 		<div class="w3-container">
 			<h3>Box 2</h3>
 		</div>
@@ -152,55 +149,55 @@
 			<div>Building Documents (five sets each)</div>
 			<div class="w3-row">
 				<div class="w3-col l6 m6">
-					<input class="w3-check" type="checkbox" name="">
+					<input class="w3-check" type="checkbox" name="site_dev">
 					<label>Site Development and location plan</label>
 				</div>
 				<div class="w3-col l6 m6">
-					<input class="w3-check" type="checkbox" name="">
+					<input class="w3-check" type="checkbox" name="archi_plan">
 					<label>Architecture plan and specifications</label>
 				</div>
 			</div>
 			<div class="w3-row">
 				<div class="w3-col l6 m6">
-					<input class="w3-check" type="checkbox" name="">
+					<input class="w3-check" type="checkbox" name="struct_des">
 					<label>Structural design and computations</label>
 				</div>
 				<div class="w3-col l6 m6">
-					<input class="w3-check" type="checkbox" name="">
+					<input class="w3-check" type="checkbox" name="sanitary_plumbing">
 					<label>Sanitary/Plumbing plans and specifications</label>
 				</div>
 			</div>
 			<div class="w3-row">
 				<div class="w3-col l6 m6">
-					<input class="w3-check" type="checkbox" name="">
+					<input class="w3-check" type="checkbox" name="elec_plans">
 					<label>Electrical plans and specifications</label>
 				</div>
 				<div class="w3-col l6 m6">
-					<input class="w3-check" type="checkbox" name="">
+					<input class="w3-check" type="checkbox" name="mech_plans">
 					<label>Mechanical plans and specifications</label>
 				</div>
 			</div>
 			<div class="w3-row">
 				<div class="w3-col l6 m6">
-					<input class="w3-check" type="checkbox" name="">
+					<input class="w3-check" type="checkbox" name="logbook">
 					<label>Logbook (1 copy)</label>
 				</div>
 				<div class="w3-col l6 m6">
-					<input class="w3-check" type="checkbox" name="">
+					<input class="w3-check" type="checkbox" name="building_documents_others">
 					<label>Others</label>
 				</div>
 			</div>
 			<div class="w3-row">
 				<div class="w3-col l12">
-					<input class="w3-input" type="text" name="" placeholder="Specify">	
+					<input class="w3-input" type="text" name="building_documents_others_data" placeholder="Specify">	
 				</div>				
 			</div>
 		</div>
-	</diV> -->
+	</diV>
 
 	<!--BOX 3!-->
 
-	<!-- <div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
+	<div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
 		<div class="w3-container">
 			<h3>Box 3</h3>
 		</div>
@@ -209,29 +206,29 @@
 				Estimated Cost
 				<div class="w3-row">
 					<div class="w3-col l4 m4">
-						<input class="w3-input" type="text" name="">
+						<input class="w3-input" type="text" name="est_buildings">
 						<label>Buildings</label>
 					</div>
 					<div class="w3-col l4 m4">
-						<input class="w3-input" type="text" name="">
+						<input class="w3-input" type="text" name="est_electrical">
 						<label>Electrical</label>
 					</div>
 					<div class="w3-col l4 m4">
-						<input class="w3-input" type="text" name="">
+						<input class="w3-input" type="text" name="est_mechanical">
 						<label>Mechanical</label>
 					</div>
 				</div>
 				<div class="w3-row">
 					<div class="w3-col l4 m4">
-						<input class="w3-input" type="text" name="">
+						<input class="w3-input" type="text" name="est_plumbing">
 						<label>Plumbing</label>
 					</div>
 					<div class="w3-col l4 m4">
-						<input class="w3-input" type="text" name="">
+						<input class="w3-input" type="text" name="est_others">
 						<label>Others</label>
 					</div>
 					<div class="w3-col l4 m4">
-						<input class="w3-input" type="text" name="">
+						<input class="w3-input" type="text" name="est_totalCost">
 						<label>Total Cost</label>
 					</div>
 				</div>
@@ -240,46 +237,46 @@
 				Cost of Equipment Installed
 				<div class="w3-row">
 					<div class="w3-col l4 m4">
-						<input class="w3-input" type="text" name="">
+						<input class="w3-input" type="text" name="cost_1">
 					</div>
 					<div class="w3-col l4 m4">
-						<input class="w3-input" type="text" name="">
+						<input class="w3-input" type="text" name="cost_2">
 					</div>
 					<div class="w3-col l4 m4">
-						<input class="w3-input" type="text" name="">
+						<input class="w3-input" type="text" name="cost_3">
 					</div>
 				</div>
 			</div>
 			<div class="w3-row">
 				<div class="w3-col l4 m4">
-					<input class="w3-input" type="text" name="">
+					<input class="w3-input" type="text" name="number_of_storeys">
 					<label>Number of storeys</label>
 				</div>
 				<div class="w3-col l4 m4">
-					<input class="w3-input" type="text" name="">
+					<input class="w3-input" type="text" name="total_floor_area">
 					<label>Total floor area</label>
 				</div>
 				<div class="w3-col l4 m4">
-					<input class="w3-input" type="date" name="">
+					<input class="w3-input" type="date" name="proposed_date_of_contruction">
 					<label>Proposed date of construction</label>
 				</div>
 			</div>
 			<div class="w3-row" style="margin-top: 10px">
 				<div class="w3-col l6 m6">
-					<input class="w3-input" type="date" name="">
+					<input class="w3-input" type="date" name="expected_date_of_completion">
 					<label>Expected date of completion</label>
 				</div>
 				<div class="w3-col l6 m6">
-					<input class="w3-input" type="text" name="">
+					<input class="w3-input" type="text" name="material_of_contruction">
 					<label>Material of Construction (wood, conc., steel, mixed)</label>
 				</div>
 			</div>
 		</div>
-	</diV> -->
+	</diV>
 	
 	<!--BOX 4!-->
 
-	<!-- <div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
+	<div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
 		<div class="w3-container">
 			<h3>Box 4</h3>
 		</div>
@@ -393,11 +390,11 @@
 				</div>
 			</div>
 		</div>
-	</diV> -->
+	</diV>
 
 	<!--BOX 5!-->
 
-	<!-- <div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
+	<div class="w3-card w3-white w3-round-large" style="margin-top: 15px;">
 		<div class="w3-container">
 			<h3>Box 5</h3>
 		</div>
@@ -671,11 +668,11 @@
 				</div>
 			</div>
 		</div>
-	</diV> -->
+	</diV>
 
 	<!--BOX 6 & 7 !-->
 
-	<!-- <div class="w3-cell-row" id="cont2box" style="margin-top: 10px">
+	<div class="w3-cell-row" id="cont2box" style="margin-top: 10px">
 		<div class="w3-cell">
 			<div class="w3-card w3-white w3-round-large">
 				<div class="w3-container">
@@ -744,11 +741,11 @@
 				</diV>
 			</div>
 		</div>
-	</div> -->
+	</div>
 
 	<!--BOX 8 & 9 !-->
 
-	<!-- <div class="w3-cell-row" id="cont2box" style="margin: 10px 0px;">
+	<div class="w3-cell-row" id="cont2box" style="margin: 10px 0px;">
 		<div class="w3-cell">
 			<div class="w3-card w3-white w3-round-large">
 				<div class="w3-container">
@@ -803,6 +800,6 @@
 				</diV>
 			</div>
 		</div>
-	</div> -->
+	</div>
 </body>
 </html>	

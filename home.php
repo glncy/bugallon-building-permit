@@ -63,7 +63,7 @@ include('process/auth.php');
 			font-weight: 500;
 			text-overflow: clip;
 		}
-		footer{
+		.footer{
 			background-color: #e4e0da;
 			position: absolute;
 			bottom: 0px;
@@ -82,21 +82,26 @@ include('process/auth.php');
 	</style>
 </head>
 <body class="w3-cell w3-cell-middle">
-
 	<div id="modal_profile_setting" class="w3-modal">
 	  	<div class="w3-modal-content">
 	   		<header class="w3-container">
-	      		<h3>Profile Setting</h3>
+	      		<h3>Change Password</h3>
 	    	</header>
 	    	<div class="w3-container">
-	      		<label>Password</label>
-				<input class="w3-input" type="text">
-				<label>Re-type password</label>
-				<input class="w3-input" type="text">				
+				<form id="changePassword" action="process/change_password.php" method="POST">
+					<label>Current Password</label>
+					<input class="w3-input" type="password" name="currentPw">
+					<br/>
+					<label>New Password</label>
+					<input class="w3-input" type="password" name="newPw">
+					</br>
+					<label>Re-type New Password</label>
+					<input class="w3-input" type="password" name="retypeNewPw">
+				</form>				
 	    	</div>
 	    	<footer class="w3-container w3-bar w3-padding-16">
 	      		<button class="w3-bar-item w3-button w3-round-xxlarge" onclick="document.getElementById('modal_profile_setting').style.display='none'">Cancel</button>
-	      		<button class="w3-bar-item w3-button w3-round-xxlarge" onclick="document.getElementById('modal_profile_setting').style.display='none'">Save</button>
+	      		<button class="w3-bar-item w3-button w3-round-xxlarge" onclick="document.getElementById('changePassword').submit();">Save</button>
 	    	</footer>
 	  	</div>
 	</div>
@@ -107,7 +112,7 @@ include('process/auth.php');
 	      		<h3>Logout</h3>
 	    	</header>
 	    	<div class="w3-container">
-	      		Are you sure you want to logout?			
+	      		Are you sure you want to logout?	
 	    	</div>
 	    	<footer class="w3-container w3-bar w3-padding-16">
 	      		<button class="w3-bar-item w3-button w3-round-xxlarge" onclick="document.getElementById('modal_logout').style.display='none'">No</button>
@@ -139,15 +144,15 @@ include('process/auth.php');
 			</div>
 			<div class="w3-row w3-section">
 				<div class="w3-col l6 m6">
-					<button class="w3-button w3-round-xlarge home_buttons" onclick="document.getElementById('modal_profile_setting').style.display='block'">
+					<button class="w3-button w3-round-xlarge home_buttons" onclick="document.getElementById('modal_profile_setting').style.display='initial'">
 						<div id="content">
 							<i class="demo-icon icon-wrench-outline"></i>
-							<div id="hometext">PROFILE SETTING</div>
+							<div id="hometext" style="margin-left: -26%;">CHANGE PASSWORD</div>
 						</div>
 					</button>	
 				</div>
 				<div class="w3-col l6 m6">
-					<button class="w3-button w3-round-xlarge home_buttons" onclick="document.getElementById('modal_logout').style.display='block'">
+					<button class="w3-button w3-round-xlarge home_buttons" onclick="document.getElementById('modal_logout').style.display='initial'">
 						<div id="content">
 							<i class="demo-icon icon-power-outline"></i>
 							<div id="hometext">LOGOUT</div>
@@ -158,7 +163,7 @@ include('process/auth.php');
 		</div>
 	</div>
 
-	<footer class="w3-center">
+	<footer class="w3-center footer">
 	    <p>Bugallon Office <i class="fa fa-copyright"></i>&copy; Copyright 2019</p>
 	 </footer>
 

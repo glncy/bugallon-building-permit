@@ -101,7 +101,7 @@ if ((isset($_POST['username']))&&(isset($_POST['pw']))) {
 			</div>
 			<div class="w3-row w3-section">
 				<div class="w3-rest">
-					<input class="w3-input" type="text" name="pw" placeholder="Password" id="input_password" required>	
+					<input class="w3-input" type="password" name="pw" placeholder="Password" id="input_password" required>	
 				</div>
 			</div>
 			<div class="w3-container w3-padding-16" id="btn-item">

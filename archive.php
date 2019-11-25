@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/w3.css">
 	<link rel="stylesheet" href="css/obofonticon.css">
 	<link rel="stylesheet" href="css/jquery.dataTables.min.css"/>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 	<style type="text/css">
     body, h1, h5, h6, div, label{
@@ -128,9 +129,9 @@
 				  var display = "<ol>";
 				  var loop = 0;
 				    while (loop < loopCount){
-              display += "<li>Building No. : "+obj[loop].id+" | <button type='button' onclick=\"redirectToPermit('building','"+obj[loop].id+"')\">View Permit</button>";
+              display += "<li>Building No. : "+obj[loop].id+" | <button type='button' onclick=\"redirectToPermit('building','"+obj[loop].id+"')\">View Permit</button><br/><br/>";
               await fetchOtherForms(obj[loop].id).then((r) => display+=r);
-              display += "</li>";
+              display += "<br/></li>";
 					  loop++;
 				  }
 				  display += "</ol>";
@@ -146,7 +147,10 @@
   }
 
   async function fetchOtherForms(id){
-    var display = "<ul>"
+    var checkIcon = '<center><i class="fa fa-check" aria-hidden="true" style="font-size: 35px; color: white; background-color: #00b894; padding-top: 9px;padding-bottom: 9px; padding-left: 12px; padding-right: 12px; border-radius: 100%;"></i></center';
+    var timesIcon = '<td><center><i class="fa fa-times" aria-hidden="true" style="font-size: 35px; color: white; background-color: #ff7675; padding-top: 9px;padding-bottom: 9px; padding-left: 12px; padding-right: 12px; border-radius: 100%;"></i></center></td>';
+
+    var display = "<table style='width: 100%;'><tr>"
     await $.ajax({
 			  url: "process/get_forms.php",
 			  type: "get",
@@ -155,49 +159,49 @@
 			  },
 			  success: function(r){
 				  if (r[0].agricultural != null){
-            display+="<li>Agricultural: <button type='button' onclick=\"redirectToPermit('agricultural','"+r[0].agricultural+"')\">View Permit</button></li>"
+            display+="<td><a href='#' onclick=\"redirectToPermit('agricultural','"+r[0].agricultural+"')\">"+checkIcon+"</button></td>"
           }
           else {
-            display+="<li>Agricultural: No Permit</li>"
+            display+=timesIcon;
           }
           if (r[1].demolition != null){
-            display+="<li>Demolition: <button type='button' onclick=\"redirectToPermit('demolition','"+r[1].demolition+"')\">View Permit</button></li>"
+            display+="<td><a href='#' onclick=\"redirectToPermit('demolition','"+r[1].demolition+"')\">"+checkIcon+"</a></td>"
           }
           else {
-            display+="<li>Demolition: No Permit</li>"
+            display+=timesIcon;
           }
           if (r[2].electrical != null){
-            display+="<li>Electrical: <button type='button' onclick=\"redirectToPermit('electrical','"+r[2].electrical+"')\">View Permit</button></li>"
+            display+="<td><a href='#' onclick=\"redirectToPermit('electrical','"+r[2].electrical+"')\">"+checkIcon+"</button></td>"
           }
           else {
-            display+="<li>Electrical: No Permit"+r[2].electrical+"</li>"
+            display+=timesIcon;
           }
           if (r[3].electronics != null){
-            display+="<li>Electronics: <button type='button' onclick=\"redirectToPermit('electronics','"+r[3].electronics+"')\">View Permit</button></li>"
+            display+="<td><a href='#' onclick=\"redirectToPermit('electronics','"+r[3].electronics+"')\">"+checkIcon+"</a></td>"
           }
           else {
-            display+="<li>Electronics: No Permit</li>"
+            display+=timesIcon;
           }
           if (r[4].fencing != null){
-            display+="<li>Fencing: <button type='button' onclick=\"redirectToPermit('fencing','"+r[4].fencing+"')\">View Permit</button></li>"
+            display+="<td><a href='#' onclick=\"redirectToPermit('fencing','"+r[4].fencing+"')\">"+checkIcon+"</a></td>"
           }
           else {
-            display+="<li>Fencing: No Permit</li>"
+            display+=timesIcon;
           }
           if (r[5].mechanical != null){
-            display+="<li>Mechanical: <button type='button' onclick=\"redirectToPermit('mechanical','"+r[5].mechanical+"')\">View Permit</button></li>"
+            display+="<td><a href='#' onclick=\"redirectToPermit('mechanical','"+r[5].mechanical+"')\">"+checkIcon+"</a></td>"
           }
           else {
-            display+="<li>Mechanical: No Permit</li>"
+            display+=timesIcon;
           }
           if (r[6].sanitary != null){
-            display+="<li>Sanitary: <button type='button' onclick=\"redirectToPermit('sanitary','"+r[6].sanitary+"')\">View Permit</button></li>"
+            display+="<td><a href='#' onclick=\"redirectToPermit('sanitary','"+r[6].sanitary+"')\">"+checkIcon+"</a></td>"
           }
           else {
-            display+="<li>Sanitary: No Permit</li>"
+            display+=timesIcon;
           }
 			  }
-    }).promise().then(() => display += "</ul>");
+    }).promise().then(() => display += "</tr><tr style='text-align: center; font-weight: bold;'><td>Agricultural</td><td>Demolition</td><td>Electrical</td><td>Electronics</td><td>Fencing</td><td>Mechanical</td><td>Sanitary</td></tr></table>");
     return display;
   }
 	</script>
