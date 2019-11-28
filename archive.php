@@ -100,7 +100,7 @@
 					{ data : "mi"},
 					{ data : "id" , 
 						render : function (data, type, row) {
-							var temp = '<input type="hidden" value=\''+JSON.stringify(row)+'\' id="dataHandler_'+data+'"><button onclick="dataSelect('+data+')">View</button>';
+							var temp = '<input type="hidden" value=\''+JSON.stringify(row)+'\' id="dataHandler_'+data+'"><button onclick="dataSelect('+data+')">View</button>&nbsp&nbsp<button onclick="window.location.href = \'editdata.php?id='+data+'\';">Edit</button>';
 							return temp;
 						}
 					}
