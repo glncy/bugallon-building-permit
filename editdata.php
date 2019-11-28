@@ -14,7 +14,7 @@ if (isset($_POST['submit'])){
 	$municipality = $conn->real_escape_string($_POST['municipality']);
 	$zip_code = $conn->real_escape_string($_POST['zip_code']);
 	$tel_no = $conn->real_escape_string($_POST['tel_no']);
-	$sql = "UPDATE bp_applicants SET lname='$lname',fname='$fname',mi='$mi',tin='$tin',add_no='$add_no',barangay='$barangay',municipality='$municipality',zip_code='$zip_code',tel_no='$tel_no'";
+	$sql = "UPDATE bp_applicants SET lname='$lname',fname='$fname',mi='$mi',tin='$tin',add_no='$add_no',barangay='$barangay',municipality='$municipality',zip_code='$zip_code',tel_no='$tel_no' WHERE id='$id'";
 	if ($conn->query($sql)){
 		echo "<script>alert('Updated Successfully');</script>";
 	}
